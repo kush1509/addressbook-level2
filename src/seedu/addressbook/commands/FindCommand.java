@@ -49,12 +49,25 @@ public class FindCommand extends Command {
     private List<ReadOnlyPerson> getPersonsWithNameContainingAnyKeyword(Set<String> keywords) {
         final List<ReadOnlyPerson> matchedPersons = new ArrayList<>();
         for (ReadOnlyPerson person : addressBook.getAllPersons()) {
-            final Set<String> wordsInName = new HashSet<>(person.getName().getWordsInName());
-            if (!Collections.disjoint(wordsInName, keywords)) {
-                matchedPersons.add(person);
-            }
+            findMatchingPerson(keywords, matchedPersons, person);
         }
         return matchedPersons;
+    }
+
+    /**
+     * Retrieves person in the address book whose name contains some of the specified keywords.
+     *
+     * @param keywords for searching
+     * @return list of persons found
+     */
+    private void findMatchingPerson(Set<String> keywords, List<ReadOnlyPerson> matchedPersons, ReadOnlyPerson person) {
+        final Set<String> wordsInName = new HashSet<>(person.getName().getWordsInName());
+        for(String keyword: keywords) {
+            if (wordsInName.stream().anyMatch(word -> word.startsWith(keyword))) {
+                matchedPersons.add(person);
+                break;
+            }
+        }
     }
 
 }
