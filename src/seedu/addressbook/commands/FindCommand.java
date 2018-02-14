@@ -63,7 +63,7 @@ public class FindCommand extends Command {
     private void findMatchingPerson(Set<String> keywords, List<ReadOnlyPerson> matchedPersons, ReadOnlyPerson person) {
         final Set<String> wordsInName = new HashSet<>(person.getName().getWordsInName());
         for(String keyword: keywords) {
-            if (wordsInName.stream().anyMatch(word -> word.startsWith(keyword))) {
+            if (wordsInName.stream().anyMatch(word -> word.startsWith(keyword.toLowerCase()))) {
                 matchedPersons.add(person);
                 break;
             }
