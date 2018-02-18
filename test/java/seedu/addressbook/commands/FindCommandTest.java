@@ -28,8 +28,14 @@ public class FindCommandTest {
         //same word, different case: matched
         assertFindCommandBehavior(new String[]{"aMy"}, Arrays.asList(td.amy));
 
-        //partial word: not matched
+        //partial word: matched
         assertFindCommandBehavior(new String[]{"am"}, Arrays.asList(td.amy));
+
+        //multiple partial words: matched
+        assertFindCommandBehavior(new String[]{"am", "ca"}, Arrays.asList(td.amy, td.candy));
+        
+        //partial word: matched in multiple
+        assertFindCommandBehavior(new String[]{"b"}, Arrays.asList(td.amy, td.bill));
 
         //multiple words: matched
         assertFindCommandBehavior(new String[]{"Amy", "Bill", "Candy", "Destiny"},

@@ -209,6 +209,12 @@
 || 
 || 1 persons listed!
 || ===================================================
+|| Enter command: || [Command entered:  find b]
+|| 	1. Adam Brown Phone: 111111 Email: adam@gmail.com Address: 111, alpha street Tags: 
+|| 	2. Betsy Choo Tags: [secretive]
+|| 
+|| 2 persons listed!
+|| ===================================================
 || Enter command: || [Command entered:  find 23912039120]
 || 
 || 0 persons listed!
@@ -226,6 +232,12 @@
 || Enter command: || [Command entered:  find Dickson]
 || 	1. Charlie Dickson Email: charlie.d@nus.edu.sg Address: 333, gamma street Tags: [school][friends]
 || 	2. Dickson Ee Phone: 444444 Address: 444, delta street Tags: [friends]
+|| 
+|| 2 persons listed!
+|| ===================================================
+|| Enter command: || [Command entered:  find ada bet]
+|| 	1. Adam Brown Phone: 111111 Email: adam@gmail.com Address: 111, alpha street Tags: 
+|| 	2. Betsy Choo Tags: [secretive]
 || 
 || 2 persons listed!
 || ===================================================
